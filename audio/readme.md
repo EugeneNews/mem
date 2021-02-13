@@ -10,6 +10,17 @@
 - [archlinux](https://bbs.archlinux.org/viewtopic.php?id=253258) - several advices.
 
 
+`/etc/pulse/default.pa`
+
+    load-module module-switch-on-port-available
+
+
+`/etc/modprobe.d/blacklist.conf` - NOT WORKING by now
+
+    install snd_hda_codec_hdmi /usr/bin/true
+
+### systemd подход
+
 `/etc/systemd/system/my-hdmi-remove.service`
 
     [Unit]
@@ -21,15 +32,12 @@
     [Install]
     WantedBy = multi-user.target
 
+_команды для установки_
 
-`/etc/pulse/default.pa`
+        systemd-analyze verify my-hdmi-remove.service
+        systemctl enable my-hdmi-remove.service
+        systemctl cat sys-fs-fuse-connections.mount
 
-    load-module module-switch-on-port-available
-
-
-`/etc/modprobe.d/blacklist.conf` - NOT WORKING by now
-
-    install snd_hda_codec_hdmi /usr/bin/true
 
 ## disable HSP/HFP bluetooth profile
 
