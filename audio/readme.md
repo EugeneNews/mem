@@ -4,6 +4,8 @@
 
 - [PulseAudio](https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting) - PulseAudio/Troubleshooting.
 
+- [Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-switch-on-port-available) - PulseAudio/Modules description.
+
 
 ## How to disable nvidia hdmi audio?
 
@@ -15,7 +17,7 @@
     load-module module-switch-on-port-available
 
 
-`/etc/modprobe.d/blacklist.conf` - NOT WORKING by now
+`/etc/modprobe.d/blacklist.conf` - даёт сбои для основной карточки
 
     install snd_hda_codec_hdmi /usr/bin/true
 
@@ -46,7 +48,7 @@ _команды для установки_
     [General]
     Disable=Headset
 
-`/etc/pulse/default.pa` and add `auto_switch=false` like this
+`/etc/pulse/default.pa` and add `auto_switch=false` like this)
 
     ifexists module-bluetooth-policy.so
     load-module module-bluetooth-policy auto_switch=false  # <---- !
