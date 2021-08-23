@@ -12,8 +12,52 @@
 
 
 ### current snippets
+/etc/X11/xorg.conf.d/10-dual-monitors.conf
 
+```
+Section "ServerLayout"
+    Identifier "layout"
+    Screen 0 "nvidia"
+    Inactive "intel"
+#    ModeDebug  true
+    Option "AllowNVIDIAGPUScreens"
+#    AllowPRIMEDisplayOffloadSink       "true"
+EndSection
 
+Section "Device"
+    Identifier  "nvidia"
+    Driver      "nvidia"
+    BusID       "PCI:1:0:0"
+EndSection
+
+#Section "Monitor"
+#        Identifier      "Monitor0"
+#EndSection
+
+Section "Screen"
+    Identifier "nvidia"
+#    Monitor    "Monitor0"
+    Device "nvidia"
+    Option "AllowEmptyInitialConfiguration"
+EndSection
+
+Section "Device"
+    Identifier  "intel"
+    Driver      "modesetting"
+#    Driver      "intel"
+    BusID       "PCI:0:2:0"
+EndSection
+
+#Section "Monitor"
+#        Identifier      "Monitor1"
+#EndSection
+
+Section "Screen"
+    Identifier "intel"
+ #   Monitor    "Monitor1"
+    Device "intel"
+EndSection
+```
 
 
 
