@@ -6,6 +6,8 @@
 
 - [Modules](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#module-switch-on-port-available) - PulseAudio/Modules description.
 
+- [ubuntu pulseaudio](https://itectec.com/ubuntu/ubuntu-pulseaudio-not-detecting-bluetooth-headset-automatically/) - Pulseaudio not detecting bluetooth headset automatically.
+
 
 ## How to disable nvidia hdmi audio?
 
